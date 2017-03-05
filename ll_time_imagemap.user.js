@@ -60,10 +60,10 @@ else {
 			var timediff = d.getTime() - Date.parse(postdate);
 			divs[i].innerHTML = divs[i].innerHTML.replace(postdate, postdate + timestring(timediff));
 		}
-		
-		// image map linking
-		if (divs[i].className == 'imgs'){
-      divs[i].innerHTML = divs[i].innerHTML.replace(/\/imap\//g, "/img/");
-    }
+
+                // image map linking
+                if (divs[i].className == 'imgs'){
+                        divs[i].innerHTML = divs[i].innerHTML.replace(/\/imap\//g, "/img/");
+                }
 	}
 }
