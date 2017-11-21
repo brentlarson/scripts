@@ -22,7 +22,7 @@
         //console.log("loop count="+ i + " href=" + links[i].href);
         //check if each link is a tweet
         var matches =  links[i].href.match(tweetpattern);
-        if (matches.length > 0) {
+        if (matches != null) {
 
             //create new div for the embedded tweet
             var tweetDiv = document.createElement('div');
