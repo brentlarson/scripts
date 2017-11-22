@@ -12,7 +12,7 @@
 (function() {
 
     //regex to match tweet url
-    var tweetpattern = "twitter.com/[a-zA-Z0-9]+/status/([0-9]+)";
+    var tweetpattern = "twitter.com/[a-zA-Z0-9_]+/status/([0-9]+)";
 
     //get all links in posts
     var links = document.querySelectorAll("[class='l']");
