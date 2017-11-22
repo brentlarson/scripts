@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LL tweet embed
 // @namespace    bjgood
-// @version      0.1
+// @version      0.2
 // @description  embed tweets on ETI
 // @author       bjgood
 // @include      *boards.endoftheinter.net/showmessages.php*
