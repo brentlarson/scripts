@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LL tweet embed
 // @namespace    bjgood
-// @version      0.2
+// @version      0.3
 // @description  embed tweets on ETI
 // @author       bjgood
 // @include      *boards.endoftheinter.net/showmessages.php*
@@ -33,10 +33,13 @@
                 {
                     theme: 'light'
                 }
-            )/*.then( function( el ) {
-                console.log('Tweet added.');
-                TODO: remove 10 pixel top/bottom margins (is there an argument I can pass to do this automatically?)
-            })*/;
+            ).then( function( el ) {
+                //console.log('Tweet added.');
+                //recenter on anchor after embedding tweets
+                //TODO: prevent page from jumping up and down for every new tweet.
+                window.location.href = document.location.href;
+                //TODO: remove 10 pixel top/bottom margins (is there an argument I can pass to do this automatically?)
+            });
 
             //add the new tweet and remove the link
             links[i].parentNode.insertBefore(tweetDiv, links[i].nextSibling);
