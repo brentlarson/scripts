@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reddit fixer
 // @namespace    bjgood
-// @version      0.1
+// @version      0.2
 // @description  minor changes to reddit pages
 // @author       You
 // @include      https://www.reddit.com/*
@@ -44,24 +44,33 @@
             //console.log("start of loop index=" + i);
 
             //get each posts rank
-            var rank = divs[i].getElementsByClassName("rank")[0].innerHTML;
-            //console.log("rank=" + rank);
+            var rankspan = divs[i].querySelector("span[class^='rank']");
+            if (rankspan != null) {
+                var rank = rankspan.innerHTML;
+                //console.log("rank=" + rank);
 
-
-            //remove posts past rank 25
-            if (rank > limit) {
-                divs[i].style.display = 'none';
+                //remove posts past rank 25
+                if (rank > limit) {
+                    divs[i].style.display = 'none';
+                }
+                //console.log("after checking for match");
             }
-            //console.log("after checking for match");
         }
     } else if (/https:\/\/www.reddit.com\/r\/[a-zA-Z0-9]+\/comments\/.*/.test(document.location.href)) {
         //console.log("reddit post found");
-        var div = document.querySelector("[id^='thing_']");
-        var title_a = div.querySelector("a[class^='title ']");
-        var newLink = document.createElement('a');
-        newLink.href = title_a.href;
-        newLink.appendChild(document.createTextNode("Make purple"/*title_a.innerHTML*/));
-        title_a.parentNode.insertBefore(newLink, title_a);
+        var sitetable = document.querySelector("div[id='siteTable']");
+        var postdivs = sitetable.querySelector("[id^='thing_']");
+        //for (var j=0; j<postdivs.length; j++){
+            //console.log("postdivs[" +j+ "].id=" + postdivs[j].id);
+            //console.log("postdivs.id=" + postdivs.id);
+            var title_a = postdivs.querySelector("a[class^='title ']");
+            if (title_a != null) {
+                var newLink = document.createElement('a');
+                newLink.href = title_a.href;
+                newLink.appendChild(document.createTextNode("Make purple"/*title_a.innerHTML*/));
+                title_a.parentNode.insertBefore(newLink, title_a);
+            }
+        //}
     }
     //console.log("done with loop count=" + count);
     //alert("founds posts=" + count);
