@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reddit fixer
 // @namespace    bjgood
-// @version      0.2
+// @version      0.3
 // @description  minor changes to reddit pages
 // @author       You
 // @include      https://www.reddit.com/*
@@ -15,11 +15,11 @@
     //add here to limit a page to 25 entries
     var limit_25 = [
         "https://www.reddit.com/r/videos/",
-        "https://www.reddit.com/r/hearthstone/",
     ];
 
     var limit_12 = [
         "https://www.reddit.com/r/4chan/",
+        "https://www.reddit.com/r/hearthstone/",
     ];
 
     var limit = 0;
