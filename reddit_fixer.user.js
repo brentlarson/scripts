@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reddit fixer
 // @namespace    bjgood
-// @version      0.3
+// @version      0.4
 // @description  minor changes to reddit pages
 // @author       You
 // @include      https://www.reddit.com/*
