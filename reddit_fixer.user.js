@@ -56,22 +56,7 @@
                 //console.log("after checking for match");
             }
         }
-    } else if (/https:\/\/www.reddit.com\/r\/[a-zA-Z0-9]+\/comments\/.*/.test(document.location.href)) {
-        //console.log("reddit post found");
-        var sitetable = document.querySelector("div[id='siteTable']");
-        var postdivs = sitetable.querySelector("[id^='thing_']");
-        //for (var j=0; j<postdivs.length; j++){
-            //console.log("postdivs[" +j+ "].id=" + postdivs[j].id);
-            //console.log("postdivs.id=" + postdivs.id);
-            var title_a = postdivs.querySelector("a[class^='title ']");
-            if (title_a != null) {
-                var newLink = document.createElement('a');
-                newLink.href = title_a.href;
-                newLink.appendChild(document.createTextNode("Make purple"/*title_a.innerHTML*/));
-                title_a.parentNode.insertBefore(newLink, title_a);
-            }
-        //}
-    }
+    } 
     //console.log("done with loop count=" + count);
     //alert("founds posts=" + count);
 })();
